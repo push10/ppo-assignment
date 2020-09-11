@@ -10,7 +10,7 @@ class Home extends Component {
 
     onContentSelect = content => {
         this.setState({
-            selectedVideo: video
+            selectedVideo: content
         })
     }
 
