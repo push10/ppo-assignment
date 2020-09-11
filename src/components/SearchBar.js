@@ -1,14 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import api from '../apis/api';
 import './SearchBar.css'
 class SearchBar extends Component {
     state = {
-        term: ''
+        term : '',
+        searchResult: ''
     };
 
-    onInputChange = (e) => {
+    onInputChange = async(e) => {
         this.setState(
-            { term: e.target.value }
+            { term:e.target.value}
         )
+    }
+    onSearch = async() => {
+        const response = await api.get(`/getContent/${this.state.term}`);
+        this.setState(
+            { searchResult: response.data.items, selectedContent: null }
+        )  
     }
 
     onFormSubmit = event => {
@@ -28,7 +36,7 @@ class SearchBar extends Component {
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="feild">                        
                         <input type="text" className='width_85_per' style={inputWidth} value={this.state.term} onChange={this.onInputChange} ></input>                    
-                        <button className="positive ui button " onClick={this.onFormSubmit} style={left_margin} >Search</button>
+                        <button className="positive ui button " onClick={this.onSearch} style={left_margin} >Search</button>
                     </div>
                    
                 </form>

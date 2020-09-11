@@ -6,20 +6,13 @@ class Home extends Component {
         vedios: [],
         selectedVideo: null
     }
-    onTermSubmit = async term => {
-        
-    }
+   
 
-    onVideoSelect = video => {
+    onContentSelect = content => {
         this.setState({
             selectedVideo: video
         })
     }
-constructor(props) {
-    console.log("in side constructor");
-    super(props);
-    
-}
 
     render() {
         return (
