@@ -16,7 +16,6 @@
   .Absolute-Center {
     width: 50%;
     height: 50%;
-    overflow: auto;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -26,3 +25,25 @@
   .margin-top-3-per{
       margin-top: 3%;
   }
+  .margin-left-6pc{
+    margin-left: 6% !important;
+  }
+
+  .width-80-pc{
+    width: 80% !important;
+  }
+  .border_none{
+    border : none !important;
+  }
+  .height_40_px{
+    height: 40px;
+  }
+  .margin-top-0-per{
+    margin-top: 0%;
+}
+.float_left{
+  float: left;
+}
+.text-align-left{
+  text-align: left;
+}

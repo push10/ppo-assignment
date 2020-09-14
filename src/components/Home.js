@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-
+import ResultList from './ResultList';
+import { connect } from 'react-redux';
 class Home extends Component {
     state = {
-        vedios: [],
-        selectedVideo: null
+        searchResult: [],
+        
     }
    
+ 
 
-    onContentSelect = content => {
-        this.setState({
-            selectedVideo: content
-        })
-    }
+   
 
     render() {
         return (
             <div className='ui container Absolute-Center text-center'>
                 <h1>PPO Search</h1>
-                <SearchBar onFormSubmit={this.onTermSubmit} />
-                
+                <SearchBar />
+                <ResultList/>
             </div>
         )
     }
 }
+const mapStateToProps = state =>{
+    return {results: state.result}
+}
+export default connect(mapStateToProps)( Home);
 
-export default Home;
